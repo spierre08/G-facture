@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="connexion.css">
+</head>
+<body>
+      <form action="/" method="post">
+            <h1>Connexion</h1>
+            <% if (errrorMessage) { %>
+                  <span id="erreur"><%= errrorMessage %></span>
+            <% }else{ %>
+                  <%= errrorMessage %>
+            <% } %>
+            <input type="email" name="email" id="" placeholder="Votre email">
+            <input type="password" name="password" placeholder="Votre mot de passe">
+            <input type="submit" value="S'authentifier">
+            <div class="link">
+                  <a href="/inscription" id="inscription">Inscription</a><a href="/mdp_oublie" id="mdp">Mot de passe oublié</a>
+            </div>
+      </form>
+</body>
+</html>

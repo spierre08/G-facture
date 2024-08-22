@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="connexion.css">
+</head>
+<body>
+      <form action="#" method="POST" style="height: 420px;">
+            <h1>Modifier la facture</h1>
+            <input type="hidden" name="id" value="<%= resultat[0].code %>" min="1" required>
+            <input type="text" name="client" value="<%= resultat[0].client %>" min="1" required>
+            <input type="text" name="produit" id="" value="<%= resultat[0].produit %>" min="1" required>
+            <input type="number" name="quantite" value="<%= resultat[0].quantite %>" min="1" required>
+            <input type="number" name="prix" value="<%= resultat[0].prix %>" min="1" required>
+            <input type="number" name="montantV" value="<%= resultat[0].montantV %>" min="1" required>
+            <input type="number"  value="<%= resultat[0].montantR %>" min="1" disabled>
+            <input type="date" name="dateF" value="<%= resultat[0].dateF %>">
+            <input type="submit" value="Modifier">
+            <div class="link">
+                  <a href="/affichage" id="inscription">Retour</a>
+            </div>
+      </form>
+</body>
+</html>

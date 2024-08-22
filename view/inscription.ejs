@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="connexion.css">
+</head>
+<body>
+      <form action="#" method="post" style="height: 300px;">
+            <h1>Inscription</h1>
+            <% if (errrorMessage) { %>
+                  <span id="erreur"><%= errrorMessage %></span>
+            <% } %>
+            <input type="text" name="nom" placeholder="Votre nom">
+            <input type="email" name="email" id="" placeholder="Votre email">
+            <input type="password" name="mdp" placeholder="Votre mot de passe">
+            <input type="submit" value="S'inscrire">
+            <div class="link">
+                  <a href="/" id="inscription">Avez-vous déjà un compte</a>
+            </div>
+      </form>
+</body>
+</html>

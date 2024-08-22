@@ -1,0 +1,55 @@
+*{
+      font-family: Cascadia Code Light,sans-serif;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+}
+
+body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+}
+form{
+      position: relative;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      height: 280px;
+      box-shadow: 0 0 4px #000;
+      padding: 10px;
+}
+form #erreur{
+      background: rgb(238, 140, 140);
+      color: rgb(199, 33, 33);
+      font-weight: 600;
+      width: 390px;
+      text-align: center;
+      padding: 4px;
+}
+form #erreur1{
+      color: green;
+      font-weight: 600;
+}
+form input{
+      width: 390px;
+      padding: 4px;
+      margin: 8px;
+      outline: none;
+}
+form input[type="submit"]{
+      border: none;
+      background: #000;
+      color: #fff;
+}
+form .link{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+}
+form .link #inscription{
+      text-decoration: none;
+      color: #000;
+}

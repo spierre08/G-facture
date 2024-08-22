@@ -1,0 +1,34 @@
+<table>
+      <thead>
+            <tr>
+                  <th>Code</th>
+                  <th>Client</th>
+                  <th>Produit</th>
+                  <th>Quantité</th>
+                  <th>Prix total</th>
+                  <th>Montant versé</th>
+                  <th>Montant restant</th>
+                  <th>Date</th>
+                  <th>Action</th>
+            </tr>
+      </thead>
+      <% if (contenu.length > 0){ %>
+      <tbody>
+            <% for (var i=0; i<contenu.length; i++){  %>
+                  <tr>
+                        <td><%= contenu[i].code %></td>
+                        <td><%= contenu[i].client %></td>
+                        <td><%= contenu[i].produit %></td>
+                        <td><%= contenu[i].quantite %></td>
+                        <td><%= contenu[i].prix %></td>
+                        <td><%= contenu[i].montantV %></td>
+                        <td><%= contenu[i].montantR %></td>
+                        <td><%= contenu[i].dateF.toLocaleDateString() %></td>
+                        <td><a href="/supprimer?id=<%= contenu[i].code %>">Supprimer</a><a href="/modifier?id=<%= contenu[i].code %>">Modifier</a></td>
+                  </tr>
+            <% } %>
+      </tbody>
+      <% }else{ %>
+            <span>Aucune données pour le moment</span>
+      <% } %>
+</table>

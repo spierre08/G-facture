@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <nav>
+            <h1>Gestion de Facture</h1>
+            <div class="sous_menu">
+                  <a href="/logout">Déconnexion</a>
+                  <a href="/affichage">Affichage</a>
+            </div>
+      </nav>
+
+      <div class="container">
+            <div class="container_btn">
+                  <a href="/ajout">Ajouter</a>
+                  <form action="/rechercher_fac">
+                        <input type="search" name="element" id="" placeholder="Rechercher...">
+                        <input type="submit" value="Rechercher">
+                  </form>
+            </div>
+            <div class="table_container">
+                  <table>
+                        <thead>
+                              <tr>
+                                    <th>Code</th>
+                                    <th>Client</th>
+                                    <th>Produit</th>
+                                    <th>Quantité</th>
+                                    <th>Prix total</th>
+                                    <th>Montant versé</th>
+                                    <th>Montant restant</th>
+                                    <th>Date</th>
+                                    <th>Action</th>
+                              </tr>
+                        </thead>
+                        <% if (contenu.length > 0){ %>
+                        <tbody>
+                              <% for (var i=0; i<contenu.length; i++){  %>
+                                    <tr>
+                                          <td><%= contenu[i].code %></td>
+                                          <td><%= contenu[i].client %></td>
+                                          <td><%= contenu[i].produit %></td>
+                                          <td><%= contenu[i].quantite %></td>
+                                          <td><%= contenu[i].prix %></td>
+                                          <td><%= contenu[i].montantV %></td>
+                                          <td><%= contenu[i].montantR %></td>
+                                          <td><%= contenu[i].dateF.toLocaleDateString() %></td>
+                                          <td><a href="/supprimer?id=<%= contenu[i].code %>">Supprimer</a><a href="/modifier?id=<%= contenu[i].code %>">Modifier</a></td>
+                                    </tr>
+                              <% } %>
+                        </tbody>
+                        <% }else{ %>
+                              <span>Aucune données pour le moment</span>
+                        <% } %>
+                  </table>            
+            </div>
+      </div>
+      
+</body>

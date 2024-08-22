@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="connexion.css">
+</head>
+<body>
+      <form action="#" style="height: 350px;" method="POST">
+            <h1>Nouvelle facture</h1>
+            <% if (errrorMessage) { %>
+                  <span id="erreur"><%= errrorMessage %></span>
+            <% } %>
+            <input type="text" name="client" placeholder="Nom du client">
+            <input type="text" name="produit" id="" placeholder="Nom du produit">
+            <input type="number" name="quantite" placeholder="Quantité" min="1">
+            <input type="number" name="prix" placeholder="Prix total" min="1">
+            <input type="number" name="montant" placeholder="Montant versé" min="1">
+            <input type="submit" value="Ajouter">
+            <div class="link">
+                  <a href="/affichage" id="inscription">Retour</a>
+            </div>
+      </form>
+</body>
+</html>

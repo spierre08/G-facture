@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <nav>
+            <h1>Gestion de Facture</h1>
+            <div class="sous_menu">
+                  <span><%= user %></span>
+                  <a href="/logout">Déconnexion</a>
+                  <a href="/rechercher">Rechercher</a>
+            </div>
+      </nav>
+
+      <div class="container">
+            <div class="container_btn">
+                  <a href="/ajout">Ajouter</a>
+            </div>
+            <div class="table_container">
+                  <span id="chargement">Chargement...</span>
+            </div>
+      </div>
+
+      <script>
+            //Reactualisation automatique de la page service
+            let chargement = document.getElementById("chargement")
+            setInterval(function(){
+                let xhr = new XMLHttpRequest()
+                xhr.onreadystatechange = function(){
+                    if (xhr.readyState == 4 && xhr.status == 200){
+                        chargement.innerHTML = this.responseText
+                    }
+                }
+                xhr.open("GET","/contenu",true) // Récupération de la page
+                xhr.send()
+            },500) //Actualiser la page tous les 500 millisecondes
+      </script>
+</body>
+</html>
